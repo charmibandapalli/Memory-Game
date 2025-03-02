@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="startGame()">Start</button>
+  <p id="number"></p>
+  <input id="guess" placeholder="Enter number">
+  <button onclick="checkGuess()">Check</button>
+
+  <script>
+    let num;
+    function startGame() {
+      num = Math.floor(Math.random() * 100);
+      document.getElementById("number").innerText = num;
+      setTimeout(() => { document.getElementById("number").innerText = ""; }, 2000);
+    }
+    function checkGuess() {
+      let guess = document.getElementById("guess").value;
+      alert(guess == num ? "Correct!" : "Wrong!");
+    }
+  </script>
+</body>
+</html>
